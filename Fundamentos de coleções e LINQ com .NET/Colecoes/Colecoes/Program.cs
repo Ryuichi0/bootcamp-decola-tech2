@@ -6,23 +6,55 @@ namespace Colecoes
     {
         static void Main(string[] args)
         {
-            OperacoesLista opLista = new OperacoesLista();
+            Stack<string> pilhaLivros = new Stack<string>();
 
-            string[] estadoArray = new string[] { "SC", "MT" };
+            pilhaLivros.Push(".NET");
+            pilhaLivros.Push("DDD");
+            pilhaLivros.Push("Código limpo");
 
-            List<string> estados = new List<string> { "SP", "MG", "BA"};
+            Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count()}");
+            while (pilhaLivros.Count > 0)
+            {
+                Console.WriteLine($"Próximo livro para a leitura: {pilhaLivros.Peek()}");
+                Console.WriteLine($"{pilhaLivros.Pop()} lido com sucesso");
+            }
+            Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count()}");
 
-            Console.WriteLine($"Quantidade de elementos na lista: {estados.Count}");
 
-            opLista.ImprimirListaString(estados);
 
-            //Console.WriteLine("Removendo o elemento");
-            //estados.Remove("MG");
+            //Queue<string> fila = new Queue<string>();
 
-            //estados.AddRange(estadoArray);
-            estados.Insert(1, "RJ");
+            //fila.Enqueue("AAA");
+            //fila.Enqueue("BBB");
+            //fila.Enqueue("CCC");
 
-            opLista.ImprimirListaString(estados);
+            //Console.WriteLine($"Tamanho da fila: {fila.Count()}");
+            //while (fila.Count > 0)
+            //{
+            //    Console.WriteLine($"Vez de: {fila.Peek()}");
+            //    Console.WriteLine($"{fila.Dequeue()} atendido");
+            //}
+            //Console.WriteLine($"Tamanho da fila: {fila.Count()}");
+
+
+
+            //OperacoesLista opLista = new OperacoesLista();
+
+            //string[] estadoArray = new string[] { "SC", "MT" };
+
+            //List<string> estados = new List<string> { "SP", "MG", "BA"};
+
+            //Console.WriteLine($"Quantidade de elementos na lista: {estados.Count}");
+
+            //opLista.ImprimirListaString(estados);
+
+            ////Console.WriteLine("Removendo o elemento");
+            ////estados.Remove("MG");
+
+            ////estados.AddRange(estadoArray);
+            //estados.Insert(1, "RJ");
+
+            //opLista.ImprimirListaString(estados);
 
 
 
