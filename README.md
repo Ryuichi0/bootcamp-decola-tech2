@@ -1,1 +1,1 @@
-# bootcamp-tech2
+# Repositório do BDT 2° edição

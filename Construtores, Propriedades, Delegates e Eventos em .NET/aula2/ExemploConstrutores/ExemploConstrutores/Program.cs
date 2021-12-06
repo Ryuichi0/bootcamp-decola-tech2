@@ -6,8 +6,19 @@ namespace ExemploConstrutores
     {
         static void Main(string[] args)
         {
-            Aluno al1 = new Aluno("Teste", "TT", "T");
-            al1.Apresentar();
+            Data data = new Data();
+            //data.SetMes(20);
+
+            data.Mes = 5;
+
+            data.ApresentarMes();
+
+
+
+
+
+            //Aluno al1 = new Aluno("Teste", "TT", "T");
+            //al1.Apresentar();
 
 
 
