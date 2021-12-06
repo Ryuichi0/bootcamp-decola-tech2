@@ -6,27 +6,56 @@ namespace Colecoes
     {
         static void Main(string[] args)
         {
-            Dictionary<string, string> estados = new Dictionary<string, string>();
+            int[] arrayNumeros = new int[10] { 100, 1, 4, 0, 8, 15, 19, 19, 4, 100 };
 
-            estados.Add("SP", "São Paulo");
-            estados.Add("MG", "Minas Gerais");
-            estados.Add("BA", "Bahia");
+            var minimo = arrayNumeros.Min();
+            var maximo = arrayNumeros.Max();
+            var medio = arrayNumeros.Average();
+            var soma = arrayNumeros.Sum();
+            var arrayUnico = arrayNumeros.Distinct().ToArray();
 
-            foreach (KeyValuePair<string, string> item in estados)
-            {
-                Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
-            }
+            Console.WriteLine($"Mínimo: {minimo}");
+            Console.WriteLine($"Máximo: {maximo}");
+            Console.WriteLine($"média: {medio}");
+            Console.WriteLine($"Soma: {soma}");
+            Console.WriteLine($"Array original: {string.Join(", ", arrayNumeros)}");
+            Console.WriteLine($"Array distinto: {string.Join(", ", arrayUnico)}");
 
-            string valorProcurado = "AA";
 
-            if (estados.TryGetValue(valorProcurado, out string estadoEncontrado))
-            {
-                Console.WriteLine(estadoEncontrado);
-            }
-            else
-            {
-                Console.WriteLine($"Chave {valorProcurado} não existe no dicionário");
-            }
+
+            //var numerosParesQuery = 
+            //    from num in arrayNumeros
+            //    where num % 2 == 0
+            //    orderby num
+            //    select num;
+
+            //var numerosParesMetodo = arrayNumeros.Where(x => x % 2 == 0).OrderBy(x => x).ToList();
+
+            //Console.WriteLine("Números pares query: " + String.Join(", ", numerosParesQuery));
+            //Console.WriteLine("Números pares método: " + String.Join(", ", numerosParesMetodo));
+
+
+            //Dictionary<string, string> estados = new Dictionary<string, string>();
+
+            //estados.Add("SP", "São Paulo");
+            //estados.Add("MG", "Minas Gerais");
+            //estados.Add("BA", "Bahia");
+
+            //foreach (KeyValuePair<string, string> item in estados)
+            //{
+            //    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+            //}
+
+            //string valorProcurado = "AA";
+
+            //if (estados.TryGetValue(valorProcurado, out string estadoEncontrado))
+            //{
+            //    Console.WriteLine(estadoEncontrado);
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Chave {valorProcurado} não existe no dicionário");
+            //}
 
             //Console.WriteLine($"Removendo o valor: {valorProcurado}");
             //estados.Remove(valorProcurado);
