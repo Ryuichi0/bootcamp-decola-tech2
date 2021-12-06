@@ -6,19 +6,59 @@ namespace Colecoes
     {
         static void Main(string[] args)
         {
-            Stack<string> pilhaLivros = new Stack<string>();
+            Dictionary<string, string> estados = new Dictionary<string, string>();
 
-            pilhaLivros.Push(".NET");
-            pilhaLivros.Push("DDD");
-            pilhaLivros.Push("Código limpo");
+            estados.Add("SP", "São Paulo");
+            estados.Add("MG", "Minas Gerais");
+            estados.Add("BA", "Bahia");
 
-            Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count()}");
-            while (pilhaLivros.Count > 0)
+            foreach (KeyValuePair<string, string> item in estados)
             {
-                Console.WriteLine($"Próximo livro para a leitura: {pilhaLivros.Peek()}");
-                Console.WriteLine($"{pilhaLivros.Pop()} lido com sucesso");
+                Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
             }
-            Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count()}");
+
+            string valorProcurado = "AA";
+
+            if (estados.TryGetValue(valorProcurado, out string estadoEncontrado))
+            {
+                Console.WriteLine(estadoEncontrado);
+            }
+            else
+            {
+                Console.WriteLine($"Chave {valorProcurado} não existe no dicionário");
+            }
+
+            //Console.WriteLine($"Removendo o valor: {valorProcurado}");
+            //estados.Remove(valorProcurado);
+
+            //foreach (KeyValuePair<string, string> item in estados)
+            //{
+            //    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+            //}
+
+            //Console.WriteLine("Valor original:");
+            //Console.WriteLine(estados[valorProcurado]);
+
+            //estados[valorProcurado] = "BA - teste atualização";
+
+            //Console.WriteLine("Valor atualizado:");
+            //Console.WriteLine(estados[valorProcurado]);
+
+
+
+            //Stack<string> pilhaLivros = new Stack<string>();
+
+            //pilhaLivros.Push(".NET");
+            //pilhaLivros.Push("DDD");
+            //pilhaLivros.Push("Código limpo");
+
+            //Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count()}");
+            //while (pilhaLivros.Count > 0)
+            //{
+            //    Console.WriteLine($"Próximo livro para a leitura: {pilhaLivros.Peek()}");
+            //    Console.WriteLine($"{pilhaLivros.Pop()} lido com sucesso");
+            //}
+            //Console.WriteLine($"Livros para a leitura: {pilhaLivros.Count()}");
 
 
 
